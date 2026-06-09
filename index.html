@@ -97,23 +97,26 @@ body {
             flex-wrap: wrap;
             align-items: center;
             gap: 0;
-        }
-        
+        }  
+
+        /* Блок с картинкой - теперь он вытягивается на всю высоту */
 .nh-features__image-block {
-    flex: 0 0 41.666%;
+    flex: 0 0 41.666%; /* Ширина картинки (5 из 12 колонок) */
     max-width: 41.666%;
     text-align: center;
-    padding: 0;
+    padding: 0; /* Убираем внутренние отступы, которые сжимали картинку */
     display: flex;
-    align-items: stretch;
+    align-items: stretch; /* Растягиваем дочерний элемент на всю высоту */
+    overflow: hidden; /* Чтобы при обрезании картинки ничего не вылезало за пределы */
 }
 
+/* Сама картинка - теперь она занимает всё пространство блока */
 .nh-features__image-block img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%;        /* Растягиваем на всю высоту родителя */
+    object-fit: cover;   /* Обрезаем лишнее, заполняя блок полностью */
     display: block;
-}        
+}
         .nh-features__info {
             flex: 0 0 58.333%;
             max-width: 58.333%;
