@@ -36,7 +36,7 @@
             color: #1a1a2e;
         }
         
-        /* Progress bar как в оригинале */
+        /* Progress bar */
         body::before {
             content: "";
             position: fixed;
@@ -84,21 +84,7 @@
             width: auto;
         }
         
-        /* Grid 12 как на nethouse */
-        .row {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        .row:before, .row:after {
-            content: "";
-            display: table;
-        }
-        .row:after {
-            clear: both;
-        }
-        
-        /* Блоки features */
+        /* Features blocks */
         .nh-features {
             background-color: rgba(204, 213, 203, 0.3);
             background-position: center;
@@ -106,9 +92,9 @@
             background-size: cover;
         }
         .nh-features__container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 40px 15px;
+            padding: 40px 24px;
         }
         .nh-features__items {
             display: flex;
@@ -117,43 +103,41 @@
         }
         .nh-features__item {
             background: transparent;
-            margin-bottom: 0;
         }
         .nh-features__item-wrapper {
-            padding: 20px 0;
+            padding: 32px 0;
         }
         
-        /* Figure с flex для правильного позиционирования картинок */
+        /* Figure layout */
         .nh-features__figure {
             display: flex;
             flex-wrap: wrap;
-            align-items: stretch;
+            align-items: center;
             gap: 0;
         }
         
-        /* Изображение — занимает пропорциональную ширину */
+        /* Image block */
         .nh-features__image-block {
             flex: 0 0 41.666%;
             max-width: 41.666%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
+            text-align: center;
+            padding: 20px;
         }
         .nh-features__image-block img {
             width: 100%;
             height: auto;
+            max-height: 400px;
             object-fit: contain;
             border-radius: 0;
             display: block;
+            margin: 0 auto;
         }
         
-        /* Контентная часть */
+        /* Content block */
         .nh-features__info {
             flex: 0 0 58.333%;
             max-width: 58.333%;
-            padding: 30px 40px;
+            padding: 40px 48px;
             background: rgba(255, 255, 255, 0);
         }
         
@@ -162,24 +146,31 @@
             flex-direction: row-reverse;
         }
         
-        /* Заголовки */
+        /* Заголовки секций */
         .nh-features__title h4 {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 700;
-            color: #000;
-            margin-bottom: 24px;
+            color: #000000;
+            margin-bottom: 28px;
             line-height: 1.2;
+        }
+        
+        /* Синие заголовки для двух последних секций */
+        .title-blue h4 {
+            color: #1226da;
         }
         
         /* Текст */
         .nh-features__text {
-            color: #000;
-            font-size: 15px;
-            line-height: 1.5;
+            color: #000000;
+            font-size: 16px;
+            line-height: 1.6;
         }
         .nh-features__text p {
             margin-bottom: 12px;
         }
+        
+        /* Ссылки — синие */
         .nh-features__text a {
             color: #1a9be8;
             text-decoration: none;
@@ -188,24 +179,21 @@
         .nh-features__text a:hover {
             text-decoration: underline;
         }
+        
+        /* По умолчанию strong — чёрные (внутренние подзаголовки) */
         .nh-features__text strong {
-            color: #1a9be8;
+            color: #000000;
             font-weight: 700;
         }
         
-        /* Синий цвет для заголовков в двух последних блоках */
-        .title-blue h4 {
-            color: #1226da;
+        /* Но strong внутри ссылок — синие (названия организаций) */
+        .nh-features__text a strong {
+            color: #1a9be8;
         }
         
-        /* Отступы как в оригинале */
-        @media (min-width: 768px) {
-            .nh-features__item-wrapper {
-                padding: 40px 0;
-            }
-            .nh-features__info {
-                padding: 40px 50px;
-            }
+        /* Отдельно для strong, которые являются названиями организаций без ссылки */
+        .nh-features__text .org-name {
+            color: #1a9be8;
         }
         
         /* Мобильная версия */
@@ -221,20 +209,23 @@
             .nh-features__info {
                 flex: 0 0 100%;
                 max-width: 100%;
-                padding: 20px;
+                padding: 24px 20px;
             }
             .nh-features__title h4 {
-                font-size: 24px;
+                font-size: 28px;
             }
             .site-header {
                 padding: 10px 16px;
             }
             .nh-features__container {
-                padding: 20px 15px;
+                padding: 24px 16px;
+            }
+            .nh-features__text {
+                font-size: 15px;
             }
         }
         
-        /* Футер */
+        /* Footer */
         .site-footer {
             background: #0f172a;
             padding: 40px 24px;
@@ -273,7 +264,7 @@
                                 <h4>Коммунальные услуги и платежи</h4>
                             </div>
                             <div class="nh-features__text">
-                                <p><strong>ООО УК "Сфера"</strong></p>
+                                <p><strong class="org-name">ООО УК "Сфера"</strong></p>
                                 <p>Лицевой cчёт: № 245136</p>
                                 <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong></p>
                                 <p>Логин: +7 9780709052<br>Пароль: vit9031981</p>
@@ -295,7 +286,7 @@
                 </div>
             </div>
 
-            <!-- 2. Полезные сайты (изображение слева) -->
+            <!-- 2. Полезные сайты (изображение слева) — strong внутри текста чёрные -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -386,7 +377,7 @@
                 </div>
             </div>
 
-            <!-- 4. FM Radio Stations (изображение слева) -->
+            <!-- 4. FM Radio Stations (изображение слева) — strong чёрные -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -452,7 +443,7 @@
                                 <p><strong><a href="https://lk.tce.crimea.com/kabinet/login" target="_blank">ГУП РК "Крымтеплокоммунэнерго"</a></strong> л/с 555008257<br>Логин: 555008257<br>Пароль: Исмаилов</p>
                                 <p><strong><a href="https://lk.crimea-ecor.ru/index.htm" target="_blank">ГУП РК "Крымэкоресурсы"</a></strong> л/с 1070117546<br>Логин: 1070117546<br>Пароль: zinurewa</p>
                                 <p><strong><a href="https://lk091.eisgkh.ru/index.htm" target="_blank">НО "РФ КРМД РК"</a></strong> л/с 1093332417<br>Логин: 1093332417<br>Пароль: gane4Ohi</p>
-                                <p><strong>ООО "Рембытсервис"</strong> л/с 51649</p>
+                                <p><strong class="org-name">ООО "Рембытсервис"</strong> л/с 51649</p>
                             </div>
                         </div>
                     </figure>
@@ -461,15 +452,7 @@
         </div>
     </div>
 </div>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>Nelver</div>
-    </div>
-</footer>
-
 <script>
-    // Прогресс скролла
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
