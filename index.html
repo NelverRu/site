@@ -94,7 +94,11 @@
             display: block;
         }
         
-        .nh-features { background-color: rgba(204, 213, 203, 0.3); }
+        .nh-features { 
+            background-color: rgba(204, 213, 203, 0.3);
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
         .nh-features__container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
         .nh-features__items { display: flex; flex-direction: column; gap: 0; }
         .nh-features__item-wrapper { padding: 2rem 0; }
@@ -126,7 +130,7 @@
         }
 
         /* ============================================ */
-        /* ↓↓↓ СЮДА ВСТАВЬТЕ КОД ДЛЯ УПРАВЛЕНИЯ РАЗМЕРАМИ КАРТИНОК ↓↓↓ */
+        /* ↓↓↓ УПРАВЛЕНИЕ РАЗМЕРАМИ КАРТИНОК ↓↓↓ */
         /* ============================================ */
 
         /* Блок 1 - Коммунальные услуги и платежи */
@@ -136,27 +140,27 @@
             object-fit: cover;
         }
 
-        /* Блок 2 - Полезные сайты (УМЕНЬШИТЕ ЗДЕСЬ) */
+        /* Блок 2 - Полезные сайты */
         .nh-features__item:nth-child(2) .nh-features__image-block img {
-            width: 80%;           /* ← МЕНЯЙТЕ ЗНАЧЕНИЕ (60%, 70%, 80%) */
-            height: auto;         /* ← АВТОМАТИЧЕСКАЯ ВЫСОТА */
-            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
-            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
-        /* Блок 3 - Сервисы для IPTV */
+        /* Блок 3 - Сервисы IPTV */
         .nh-features__item:nth-child(3) .nh-features__image-block img {
             width: 70%;
             height: 70%;
             object-fit: cover;
         }
 
-        /* Блок 4 - FM Radio Stations (УМЕНЬШИТЕ ЗДЕСЬ) */
+        /* Блок 4 - FM Radio Stations */
         .nh-features__item:nth-child(4) .nh-features__image-block img {
             width: 70%;
             height: 70%;
-            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
-            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         /* Блок 5 - Ашик Умера */
@@ -166,16 +170,16 @@
             object-fit: cover;
         }
 
-        /* Блок 6 - Ученическая (УМЕНЬШИТЕ ЗДЕСЬ) */
+        /* Блок 6 - Ученическая */
         .nh-features__item:nth-child(6) .nh-features__image-block img {
             width: 70%;
             height: 70%;
-            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
-            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         /* ============================================ */
-        /* ↑↑↑ ВЫШЕ ВСТАВЬТЕ КОД ДЛЯ УПРАВЛЕНИЯ РАЗМЕРАМИ КАРТИНОК ↑↑↑ */
+        /* ↑↑↑ УПРАВЛЕНИЕ РАЗМЕРАМИ КАРТИНОК ↑↑↑ */
         /* ============================================ */
 
         .nh-features__info {
@@ -216,6 +220,33 @@
         .nh-features__text a strong { color: #1a9be8; }
         .nh-features__text .org-name { color: #1a9be8; }
         
+        /* Нижний подвал — тёмный, с блюром, без полос и теней */
+        .site-footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(32px);
+            padding: 1.5rem 0;
+            margin-top: 0;
+            border: none;
+            box-shadow: none;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.5px;
+        }
+        
         @media (max-width: 767px) {
             .nh-features__figure { flex-direction: column !important; }
             .nh-features__image-block { flex: 0 0 100%; max-width: 100%; margin-bottom: 1.25rem; }
@@ -230,6 +261,14 @@
             .nh-features__item:nth-child(6) .nh-features__image-block img {
                 width: 60%;
                 margin: 0 auto;
+            }
+            
+            /* Подвал на мобильных */
+            .site-footer {
+                padding: 1rem 0;
+            }
+            .footer-text {
+                font-size: 0.875rem;
             }
         }
     </style>
@@ -345,7 +384,7 @@
                 </div>
             </div>
 
-            <!-- 3. Сервисы для IPTV — рисунок СЛЕВА -->
+            <!-- 3. Сервисы IPTV — рисунок СЛЕВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -433,6 +472,13 @@
         </div>
     </div>
 </div>
+
+<!-- Нижний подвал -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-text">Nelver_Site@2026</div>
+    </div>
+</footer>
 
 <script>
     window.addEventListener('scroll', function() {
