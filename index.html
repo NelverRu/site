@@ -28,15 +28,15 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html {
-            font-size: 16px; /* 1rem = 16px */
+            font-size: 16px;
         }
         
-body {
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
-    background: #f0f2f5;
-    font-size: 1.125rem; /* 18px — как в оригинале */
-    line-height: 1.5;
-}
+        body {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            font-size: 1.125rem;
+            line-height: 1.5;
+        }
         
         /* Progress bar */
         body::before {
@@ -63,36 +63,36 @@ body {
             transition: width 0.1s linear;
         }
 
-    .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(32px);
-    padding: 0.5rem 0;
-}
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(32px);
+            padding: 0.5rem 0;
+        }
 
-.header-container {
-    max-width: 1280px;
-    margin: 0;
-    padding-left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+        .header-container {
+            max-width: 1280px;
+            margin: 0;
+            padding-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
 
-.logo {
-    margin-left: 0;
-    padding-left: 0;
-}
+        .logo {
+            margin-left: 0;
+            padding-left: 0;
+        }
 
-.logo img { 
-    height: 128px;
-    width: auto;
-    display: block;
-}
+        .logo img { 
+            height: 128px;
+            width: auto;
+            display: block;
+        }
         
         .nh-features { background-color: rgba(204, 213, 203, 0.3); }
         .nh-features__container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
@@ -106,24 +106,78 @@ body {
             gap: 0;
         }  
 
-        /* Блок с картинкой - теперь он вытягивается на всю высоту */
-.nh-features__image-block {
-    flex: 0 0 41.666%; /* Ширина картинки (5 из 12 колонок) */
-    max-width: 41.666%;
-    text-align: center;
-    padding: 0; /* Убираем внутренние отступы, которые сжимали картинку */
-    display: flex;
-    align-items: stretch; /* Растягиваем дочерний элемент на всю высоту */
-    overflow: hidden; /* Чтобы при обрезании картинки ничего не вылезало за пределы */
-}
+        /* Блок с картинкой */
+        .nh-features__image-block {
+            flex: 0 0 41.666%;
+            max-width: 41.666%;
+            text-align: center;
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+        }
 
-/* Сама картинка - теперь она занимает всё пространство блока */
-.nh-features__image-block img {
-    width: 100%;
-    height: 100%;        /* Растягиваем на всю высоту родителя */
-    object-fit: cover;   /* Обрезаем лишнее, заполняя блок полностью */
-    display: block;
-}
+        /* Сама картинка - стандартные правила */
+        .nh-features__image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ============================================ */
+        /* ↓↓↓ СЮДА ВСТАВЬТЕ КОД ДЛЯ УПРАВЛЕНИЯ РАЗМЕРАМИ КАРТИНОК ↓↓↓ */
+        /* ============================================ */
+
+        /* Блок 1 - Коммунальные услуги и платежи */
+        .nh-features__item:nth-child(1) .nh-features__image-block img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Блок 2 - Полезные сайты (УМЕНЬШИТЕ ЗДЕСЬ) */
+        .nh-features__item:nth-child(2) .nh-features__image-block img {
+            width: 70%;           /* ← МЕНЯЙТЕ ЗНАЧЕНИЕ (60%, 70%, 80%) */
+            height: auto;         /* ← АВТОМАТИЧЕСКАЯ ВЫСОТА */
+            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
+            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+        }
+
+        /* Блок 3 - Сервисы для IPTV */
+        .nh-features__item:nth-child(3) .nh-features__image-block img {
+            width: 80%;
+            height: 80%;
+            object-fit: cover;
+        }
+
+        /* Блок 4 - FM Radio Stations (УМЕНЬШИТЕ ЗДЕСЬ) */
+        .nh-features__item:nth-child(4) .nh-features__image-block img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
+            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+        }
+
+        /* Блок 5 - Ашик Умера */
+        .nh-features__item:nth-child(5) .nh-features__image-block img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+        }
+
+        /* Блок 6 - Ученическая (УМЕНЬШИТЕ ЗДЕСЬ) */
+        .nh-features__item:nth-child(6) .nh-features__image-block img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;  /* ← ВЕСЬ РИСУНОК ВИДЕН */
+            margin: 0 auto;       /* ← ЦЕНТРИРУЕТ */
+        }
+
+        /* ============================================ */
+        /* ↑↑↑ ВЫШЕ ВСТАВЬТЕ КОД ДЛЯ УПРАВЛЕНИЯ РАЗМЕРАМИ КАРТИНОК ↑↑↑ */
+        /* ============================================ */
+
         .nh-features__info {
             flex: 0 0 58.333%;
             max-width: 58.333%;
@@ -139,9 +193,9 @@ body {
             flex-direction: row;
         }
         
-        /* Заголовки — как в оригинале: 32px (2rem) */
+        /* Заголовки */
         .nh-features__title h4 {
-            font-size: 2rem; /* 32px */
+            font-size: 2rem;
             font-weight: 700;
             color: #000000;
             margin-bottom: 1.75rem;
@@ -149,18 +203,18 @@ body {
         }
         .title-blue h4 { color: #1226da; }
         
-/* Текст в блоках */
-.nh-features__text {
-    color: #000000;
-    font-size: 1.125rem; /* 18px — как в оригинале */
-    line-height: 1.5;
-}
-.nh-features__text p { margin-bottom: 0.75rem; }
-.nh-features__text a { color: #1a9be8; text-decoration: underline; word-break: break-word; }
-.nh-features__text a:hover { text-decoration: underline; }
-.nh-features__text strong { color: #000000; font-weight: 700; }
-.nh-features__text a strong { color: #1a9be8; }
-.nh-features__text .org-name { color: #1a9be8; }
+        /* Текст в блоках */
+        .nh-features__text {
+            color: #000000;
+            font-size: 1.125rem;
+            line-height: 1.5;
+        }
+        .nh-features__text p { margin-bottom: 0.75rem; }
+        .nh-features__text a { color: #1a9be8; text-decoration: underline; word-break: break-word; }
+        .nh-features__text a:hover { text-decoration: underline; }
+        .nh-features__text strong { color: #000000; font-weight: 700; }
+        .nh-features__text a strong { color: #1a9be8; }
+        .nh-features__text .org-name { color: #1a9be8; }
         
         @media (max-width: 767px) {
             .nh-features__figure { flex-direction: column !important; }
@@ -169,6 +223,14 @@ body {
             .nh-features__title h4 { font-size: 1.75rem; }
             .site-header { padding: 0.625rem 1rem; }
             .nh-features__container { padding: 1.5rem 1rem; }
+            
+            /* На мобильных устройствах уменьшенные картинки тоже центрируем */
+            .nh-features__item:nth-child(2) .nh-features__image-block img,
+            .nh-features__item:nth-child(4) .nh-features__image-block img,
+            .nh-features__item:nth-child(6) .nh-features__image-block img {
+                width: 60%;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
