@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Nelver</title>
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAAC05mLyAAADfUlEQVRYCcVXTWhcVRQ+575J2qS1WXXRjZtaYrQoSooouBFEiLhQ6s6FCIIrF3ZhQRC3IrgQxIULF9Kf4kYQ3WhTpCKKYluKWhWr1DZp0yYz83zPuXfem5m8zJsQpYEDw7vvvnPPd7/znXvP5UWFcw4RQAQEJwFOl3sIziScIyQkQqsARgD2S7mP4DzBUIkKYCjhCDrP53If+3RcMhgMoiNHjqTT6XSMcw4EWsA8z1t/4YUXZjdv3vzN6OjodZ7nHXOOy7lc7oN0Or3EOQeBmCA+XsvkXhS8Nm/ZsuVX13XPiKKY931/CugfhRjqup1Ov+E4zqu+75eCIHgFAL7lnN8nCILYoIcoiqzz+Xw6l8t9VFVVZBiGEEKgqiqiKIJ2xnVd+H60KXv37nWmpqa+M03zPSEEhBDgnEPXdXDOQSlti4uiqK9lMo+uWbPmS1VVb1hrGwo4n4BSCkEQwPcbmI6MUMF5/8GDw0ePHn2Zc37eNE1IKYFSCk3ToKoqOOdQVZUOSWOYAgjgrXXr1q4eO3bsrbGxsUeFEEhIIghA7uXh+37sQh+aph09Z1lYVjabfcM0zQ8IIZBSQtd1SCnBdR263e8hZQ+F1k0gVHwzUyBXBnx/KYyUYRiGYRjPcs4/SJIHpRRSSsTjhlRVVFT8DMDKysrb5XI5SJKEJEmIYQyBcZ5nZ2ZmtoyMjLwviuKNwzAUAEKEc04lWZUF/whCvK1C6vH+uydOnLjUaDTgui6klHHPJZ/HeWyn9/b2dkzTfCZJ0gWAkL8JQm7nPOoBfxk6p+xTz+o7d+48Pzs7e46maYzji1IKVVV7PkK/aH1h4bMPRkZGXhFFcaXXJxHCVwRBSClR+VWj0fhaUZQTqqr+ynlT97iNFiKE7m7ZsuV/27dvf1+SpPO6rndM04RpmhBFEbqug1IKWZahKIqO/Qal/OYv2+2nUqnUx0IIiKKIsiwjhgDWdR2qqsJ1XZim2U4y+/LvL19H/QR/AsBngiBgPjlnmJz9/tjaMvnz8k/nN2/evNexnTS1HIZhB1JKMMZAqVfyE7x+/frKCy+8cJhhWJZSygEAURSAMQbHmRiPGgAIURQpQRAQQggwDANVVUEgEAgEgs+pVKqXpmnGGANFUZBlGciyDEmScpZlOUopKSUBoQSMMRBCCKVUYJ+zT2yzwzhLp9N7KO13DRFfgQ4nCUR/hS9P0eCT/9wPfQYRSBFbW+gqX/CQ+wvMjwliFjPjYgAAAABJRU5ErkJggg==">
-    
+    <link rel="icon" type="image/x-icon" href="https://nelver.nethouse.ru/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <style>
@@ -65,24 +63,29 @@
             transition: width 0.1s linear;
         }
         
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(32px);
-            padding: 1rem 1.5rem;
-        }
-        .header-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .logo img { height: 52px; width: auto; }
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(32px);
+    padding: 1rem 1.5rem 1rem 0; /* слева убрали отступ */
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* вместо space-between */
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo img { 
+    height: 80px;  /* увеличьте под нужный размер */
+    width: auto; 
+}
         
         .nh-features { background-color: rgba(204, 213, 203, 0.3); }
         .nh-features__container { max-width: 1280px; margin: 0 auto; padding: 2.5rem 1.5rem; }
