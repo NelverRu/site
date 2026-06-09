@@ -62,14 +62,13 @@ body {
             width: 0%;
             transition: width 0.1s linear;
         }
-        
-.site-header {
+        .site-header {
     position: sticky;
     top: 0;
     z-index: 100;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(32px);
-    padding: 1rem 1.5rem 1rem 0; /* слева убрали отступ */
+    padding: 0.5rem 0;
 }
 
 .header-container {
@@ -77,13 +76,14 @@ body {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* вместо space-between */
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
+    padding-left: 0;
 }
 
 .logo img { 
-    height: 128px;  /* увеличьте под нужный размер */
+    height: 128px;
     width: auto; 
 }
         
@@ -148,12 +148,12 @@ body {
     font-size: 1.125rem; /* 18px — как в оригинале */
     line-height: 1.5;
 }
-        .nh-features__text p { margin-bottom: 0.75rem; }
-        .nh-features__text a { color: #1a9be8; text-decoration: none; word-break: break-word; }
-        .nh-features__text a:hover { text-decoration: underline; }
-        .nh-features__text strong { color: #000000; font-weight: 700; }
-        .nh-features__text a strong { color: #1a9be8; }
-        .nh-features__text .org-name { color: #1a9be8; }
+.nh-features__text p { margin-bottom: 0.75rem; }
+.nh-features__text a { color: #1a9be8; text-decoration: underline; word-break: break-word; }
+.nh-features__text a:hover { text-decoration: underline; }
+.nh-features__text strong { color: #000000; font-weight: 700; }
+.nh-features__text a strong { color: #1a9be8; }
+.nh-features__text .org-name { color: #1a9be8; }
         
         @media (max-width: 767px) {
             .nh-features__figure { flex-direction: column !important; }
