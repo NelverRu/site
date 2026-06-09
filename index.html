@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Nelver</title>
+    
+    <link rel="apple-touch-icon" type="image/png" sizes="57x57" href="/favicon-57x57.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="/favicon-60x60.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="72x72" href="/favicon-72x72.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="/favicon-76x76.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="114x114" href="/favicon-114x114.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="/favicon-120x120.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="/favicon-144x144.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="152x152" href="/favicon-152x152.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="/favicon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/favicon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/favicon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <style>
@@ -24,19 +43,13 @@
             font-display: swap;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Roboto', Helvetica, Arial, sans-serif;
             background: #f0f2f5;
-            color: #1a1a2e;
         }
         
-        /* Progress bar */
         body::before {
             content: "";
             position: fixed;
@@ -61,7 +74,6 @@
             transition: width 0.1s linear;
         }
         
-        /* Header */
         .site-header {
             position: sticky;
             top: 0;
@@ -79,36 +91,13 @@
             flex-wrap: wrap;
             gap: 16px;
         }
-        .logo img {
-            height: 52px;
-            width: auto;
-        }
+        .logo img { height: 52px; width: auto; }
         
-        /* Features blocks */
-        .nh-features {
-            background-color: rgba(204, 213, 203, 0.3);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .nh-features__container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 40px 24px;
-        }
-        .nh-features__items {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .nh-features__item {
-            background: transparent;
-        }
-        .nh-features__item-wrapper {
-            padding: 32px 0;
-        }
+        .nh-features { background-color: rgba(204, 213, 203, 0.3); }
+        .nh-features__container { max-width: 1280px; margin: 0 auto; padding: 40px 24px; }
+        .nh-features__items { display: flex; flex-direction: column; gap: 0; }
+        .nh-features__item-wrapper { padding: 32px 0; }
         
-        /* Figure layout */
         .nh-features__figure {
             display: flex;
             flex-wrap: wrap;
@@ -116,7 +105,6 @@
             gap: 0;
         }
         
-        /* Image block */
         .nh-features__image-block {
             flex: 0 0 41.666%;
             max-width: 41.666%;
@@ -128,12 +116,10 @@
             height: auto;
             max-height: 400px;
             object-fit: contain;
-            border-radius: 0;
             display: block;
             margin: 0 auto;
         }
         
-        /* Content block */
         .nh-features__info {
             flex: 0 0 58.333%;
             max-width: 58.333%;
@@ -141,12 +127,16 @@
             background: rgba(255, 255, 255, 0);
         }
         
-        /* Чередование: чётные блоки — изображение справа */
-        .nh-features__item:nth-child(even) .nh-features__figure {
+        /* Чередование */
+        /* 1,3,5 блоки — рисунок слева (текст справа) */
+        .nh-features__item:nth-child(odd) .nh-features__figure {
             flex-direction: row-reverse;
         }
+        /* 2,4,6 блоки — рисунок справа (текст слева) */
+        .nh-features__item:nth-child(even) .nh-features__figure {
+            flex-direction: row;
+        }
         
-        /* Заголовки секций */
         .nh-features__title h4 {
             font-size: 36px;
             font-weight: 700;
@@ -154,87 +144,28 @@
             margin-bottom: 28px;
             line-height: 1.2;
         }
+        .title-blue h4 { color: #1226da; }
         
-        /* Синие заголовки для двух последних секций */
-        .title-blue h4 {
-            color: #1226da;
-        }
-        
-        /* Текст */
         .nh-features__text {
             color: #000000;
             font-size: 16px;
             line-height: 1.6;
         }
-        .nh-features__text p {
-            margin-bottom: 12px;
-        }
+        .nh-features__text p { margin-bottom: 12px; }
+        .nh-features__text a { color: #1a9be8; text-decoration: none; word-break: break-word; }
+        .nh-features__text a:hover { text-decoration: underline; }
+        .nh-features__text strong { color: #000000; font-weight: 700; }
+        .nh-features__text a strong { color: #1a9be8; }
+        .nh-features__text .org-name { color: #1a9be8; }
         
-        /* Ссылки — синие */
-        .nh-features__text a {
-            color: #1a9be8;
-            text-decoration: none;
-            word-break: break-word;
-        }
-        .nh-features__text a:hover {
-            text-decoration: underline;
-        }
-        
-        /* По умолчанию strong — чёрные (внутренние подзаголовки) */
-        .nh-features__text strong {
-            color: #000000;
-            font-weight: 700;
-        }
-        
-        /* Но strong внутри ссылок — синие (названия организаций) */
-        .nh-features__text a strong {
-            color: #1a9be8;
-        }
-        
-        /* Отдельно для strong, которые являются названиями организаций без ссылки */
-        .nh-features__text .org-name {
-            color: #1a9be8;
-        }
-        
-        /* Мобильная версия */
         @media (max-width: 767px) {
-            .nh-features__figure {
-                flex-direction: column !important;
-            }
-            .nh-features__image-block {
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
-            .nh-features__info {
-                flex: 0 0 100%;
-                max-width: 100%;
-                padding: 24px 20px;
-            }
-            .nh-features__title h4 {
-                font-size: 28px;
-            }
-            .site-header {
-                padding: 10px 16px;
-            }
-            .nh-features__container {
-                padding: 24px 16px;
-            }
-            .nh-features__text {
-                font-size: 15px;
-            }
-        }
-        
-        /* Footer */
-        .site-footer {
-            background: #0f172a;
-            padding: 40px 24px;
-        }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-            color: #64748b;
+            .nh-features__figure { flex-direction: column !important; }
+            .nh-features__image-block { flex: 0 0 100%; max-width: 100%; margin-bottom: 20px; }
+            .nh-features__info { flex: 0 0 100%; max-width: 100%; padding: 24px 20px; }
+            .nh-features__title h4 { font-size: 28px; }
+            .site-header { padding: 10px 16px; }
+            .nh-features__container { padding: 24px 16px; }
+            .nh-features__text { font-size: 15px; }
         }
     </style>
 </head>
@@ -252,7 +183,7 @@
     <div class="nh-features__container">
         <div class="nh-features__items">
             
-            <!-- 1. Коммунальные услуги и платежи (изображение справа) -->
+            <!-- 1. Коммунальные услуги и платежи — рисунок СЛЕВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -260,9 +191,7 @@
                             <img src="//i.siteapi.org/wTH0VCpeioujbPB90V1Uunvdyuc=/fit-in/514x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/mmh5u12milw8koo84ooc0o0ksggg48" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title">
-                                <h4>Коммунальные услуги и платежи</h4>
-                            </div>
+                            <div class="nh-features__title"><h4>Коммунальные услуги и платежи</h4></div>
                             <div class="nh-features__text">
                                 <p><strong class="org-name">ООО УК "Сфера"</strong></p>
                                 <p>Лицевой cчёт: № 245136</p>
@@ -286,7 +215,7 @@
                 </div>
             </div>
 
-            <!-- 2. Полезные сайты (изображение слева) — strong внутри текста чёрные -->
+            <!-- 2. Полезные сайты — рисунок СПРАВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -294,9 +223,7 @@
                             <img src="//i.siteapi.org/ZfgzySMCUiRa7DMlad38y7RMrf4=/fit-in/459x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/7jlictg9j6gwswsc448og0ogskkkwc" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title">
-                                <h4>Полезные сайты</h4>
-                            </div>
+                            <div class="nh-features__title"><h4>Полезные сайты</h4></div>
                             <div class="nh-features__text">
                                 <p><strong>Бесплатные AIChat Боты</strong><br>
                                 <a href="https://chat.deepseek.com" target="_blank">https://chat.deepseek.com</a><br>
@@ -352,7 +279,7 @@
                 </div>
             </div>
 
-            <!-- 3. Сервисы для IPTV (изображение справа) -->
+            <!-- 3. Сервисы для IPTV — рисунок СЛЕВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -360,9 +287,7 @@
                             <img src="//i.siteapi.org/gOWcs1qFhFAkpK4QGHvMt5BFZe8=/fit-in/435x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/1f3i9lypmdno8wcwwokw84o0wo0s0s" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title">
-                                <h4>Сервисы для IPTV</h4>
-                            </div>
+                            <div class="nh-features__title"><h4>Сервисы для IPTV</h4></div>
                             <div class="nh-features__text">
                                 <p><a href="https://en.fofa.info" target="_blank">https://en.fofa.info</a> tevox22256@eixdeal.com / N14e5L12</p>
                                 <p><a href="https://www.shodan.io" target="_blank">https://www.shodan.io</a> Nelver1981 / vit9031981</p>
@@ -377,7 +302,7 @@
                 </div>
             </div>
 
-            <!-- 4. FM Radio Stations (изображение слева) — strong чёрные -->
+            <!-- 4. FM Radio Stations — рисунок СПРАВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -385,9 +310,7 @@
                             <img src="//i.siteapi.org/uwrzUpbVeisF1SNhUzthONiyPC8=/fit-in/458x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/f8pbucwo69csc88c8ww00ck4c4ocs4" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title">
-                                <h4>FM Radio Stations ™</h4>
-                            </div>
+                            <div class="nh-features__title"><h4>FM Radio Stations ™</h4></div>
                             <div class="nh-features__text">
                                 <p><strong>Deep One House Radio</strong><br><a href="http://stream.deep1.ru:8000/deep1mp3">http://stream.deep1.ru:8000/deep1mp3</a></p>
                                 <p><strong>Drum &amp; Bass (101.ru)</strong><br><a href="http://pub0301.101.ru:8000/stream/pro/aac/64/6">http://pub0301.101.ru:8000/stream/pro/aac/64/6</a></p>
@@ -403,7 +326,7 @@
                 </div>
             </div>
 
-            <!-- 5. Коммунальные услуги (ул.Ашик Умера, д.8) — изображение справа -->
+            <!-- 5. Коммунальные услуги (ул.Ашик Умера, д.8) — рисунок СЛЕВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -411,9 +334,7 @@
                             <img src="//i.siteapi.org/wTH0VCpeioujbPB90V1Uunvdyuc=/fit-in/514x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/mmh5u12milw8koo84ooc0o0ksggg48" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title title-blue">
-                                <h4>Коммунальные услуги (ул.Ашик Умера, д.8)</h4>
-                            </div>
+                            <div class="nh-features__title title-blue"><h4>Коммунальные услуги (ул.Ашик Умера, д.8)</h4></div>
                             <div class="nh-features__text">
                                 <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong> л/с 3964<br>Логин: +79787188306<br>Пароль: milka8591</p>
                                 <p><strong><a href="https://lk.crimea-energy.ru" target="_blank">ГУП РК "Крымэнерго"</a></strong> л/с 118222<br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
@@ -426,7 +347,7 @@
                 </div>
             </div>
 
-            <!-- 6. Коммунальные услуги (ул.Ученическая, д.5, кв.16) — изображение слева -->
+            <!-- 6. Коммунальные услуги (ул.Ученическая, д.5, кв.16) — рисунок СПРАВА -->
             <div class="nh-features__item">
                 <div class="nh-features__item-wrapper">
                     <figure class="nh-features__figure">
@@ -434,9 +355,7 @@
                             <img src="//i.siteapi.org/Wp1bzejjwXsMIJvL4gVxwRAEtkw=/fit-in/458x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/3gurh20t8dicckow0g008gcg4w08ko" alt="">
                         </div>
                         <div class="nh-features__info">
-                            <div class="nh-features__title title-blue">
-                                <h4>Коммунальные услуги (ул.Ученическая, д.5, кв.16)</h4>
-                            </div>
+                            <div class="nh-features__title title-blue"><h4>Коммунальные услуги (ул.Ученическая, д.5, кв.16)</h4></div>
                             <div class="nh-features__text">
                                 <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong> л/с 58329<br>Логин: +79787188306<br>Пароль: milka8591</p>
                                 <p><strong><a href="https://lk.crimea-energy.ru" target="_blank">ГУП РК "Крымэнерго"</a></strong> л/с 117546<br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
@@ -452,6 +371,7 @@
         </div>
     </div>
 </div>
+
 <script>
     window.addEventListener('scroll', function() {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
