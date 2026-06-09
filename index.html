@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Nelver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <style>
+        @font-face {font-family:'Roboto';src:local('Roboto'),local('Roboto-Regular'),url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+        @font-face {font-family:'Roboto';src:local('Roboto Bold'),local('Roboto-Bold'),url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+        }
+        
+        /* Progress bar */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: transparent;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: #3772ff;
+            z-index: 10000;
+            pointer-events: none;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(32px);
+            padding: 12px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo img {
+            height: 52px;
+            width: auto;
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+        
+        /* Features blocks */
+        .nh-features__items {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .nh-features__item {
+            background: #fff;
+            border-radius: 0;
+        }
+        .nh-features__item-wrapper {
+            padding: 16px 0;
+        }
+        .nh-features__figure {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+        }
+        .nh-features__image-block {
+            flex: 0 0 auto;
+            min-width: 180px;
+            text-align: center;
+        }
+        .nh-features__image-block img {
+            max-width: 100%;
+            max-height: 140px;
+            border-radius: 20px;
+            object-fit: contain;
+        }
+        .nh-features__info {
+            flex: 3;
+            min-width: 250px;
+        }
+        .nh-features__title h4 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .nh-features__text {
+            color: #000;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .nh-features__text p {
+            margin-bottom: 10px;
+        }
+        .nh-features__text a {
+            color: #1a9be8;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        .nh-features__text a:hover {
+            text-decoration: underline;
+        }
+        .nh-features__text strong {
+            color: #1a9be8;
+            font-weight: 700;
+        }
+        
+        /* Чередование картинок как в оригинале */
+        @media (min-width: 768px) {
+            .nh-features__item:nth-child(even) .nh-features__figure {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .nh-features__figure {
+                flex-direction: column !important;
+            }
+            .nh-features__title h4 {
+                font-size: 24px;
+            }
+            .container {
+                padding: 20px 16px;
+            }
+            .site-header {
+                padding: 8px 16px;
+            }
+            .nh-features__image-block {
+                min-width: 120px;
+            }
+        }
+        
+        /* Простой футер без копирайтов */
+        .site-footer {
+            background: #0f172a;
+            padding: 40px 24px;
+            margin-top: 40px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="logo">
+            <img src="//i.siteapi.org/LDk9qxGRcb4eb1gIQD9RI4TghOI=/0x0:538x542/fit-in/215x128/s2.siteapi.org/5d23dcc0520c42b/logo/mr2lum13cm8g4ggo8w00w0wk0wg8c4" alt="Nelver">
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="nh-features__items">
+        
+        <!-- 1. Коммунальные услуги и платежи -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/wTH0VCpeioujbPB90V1Uunvdyuc=/fit-in/514x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/mmh5u12milw8koo84ooc0o0ksggg48" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4>Коммунальные услуги и платежи</h4></div>
+                        <div class="nh-features__text">
+                            <p><strong>ООО УК "Сфера"</strong></p>
+                            <p>Лицевой cчёт: № 245136</p>
+                            <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong></p>
+                            <p>Логин: +7 9780709052<br>Пароль: vit9031981</p>
+                            <p><strong><a href="https://lk.crimea-energy.ru/" target="_blank">ГУП РК "Крымэнерго"</a></strong></p>
+                            <p>Логин: Nelver@bk.ru<br>Пароль: 9031981</p>
+                            <p><strong><a href="https://lkk.crimeagasnet.ru/" target="_blank">ГУП РК "Крымгазсети"</a></strong></p>
+                            <p>Логин: vit1981@kerch.net<br>Пароль: 9031981</p>
+                            <p><strong><a href="https://lk.crimea-ecor.ru" target="_blank">ГУП РК "Крымэкоресурсы"</a></strong></p>
+                            <p>Логин: 1070058636<br>Пароль: veDuziba</p>
+                            <p><strong><a href="https://lk.tce.crimea.com/kabinet/login" target="_blank">ГУП РК "Крымтеплокоммунэнерго"</a></strong></p>
+                            <p>Логин: 555013221<br>Пароль: Черкашина</p>
+                            <p><strong><a href="https://lk091.eisgkh.ru/tariff-ro.htm" target="_blank">"НО РФКР МКД Крым"</a></strong></p>
+                            <p>Логин: 1089260640<br>Пароль: zaFebAgi</p>
+                            <p><strong><a href="https://югдомофон.рф/" target="_blank">"ЮГ-ДОМОФОН"</a></strong></p>
+                            <p>Лицевой cчёт: № 41002281</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 2. Полезные сайты -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/ZfgzySMCUiRa7DMlad38y7RMrf4=/fit-in/459x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/7jlictg9j6gwswsc448og0ogskkkwc" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4>Полезные сайты</h4></div>
+                        <div class="nh-features__text">
+                            <p><strong>Бесплатные AIChat Боты</strong><br>
+                            <a href="https://chat.deepseek.com" target="_blank">https://chat.deepseek.com</a><br>
+                            <a href="https://chat.qwen.ai/" target="_blank">https://chat.qwen.ai</a><br>
+                            <a href="https://stackoverflow.ai" target="_blank">https://stackoverflow.ai</a><br>
+                            <a href="https://demo.chat-sdk.dev" target="_blank">https://demo.chat-sdk.dev</a><br>
+                            <a href="https://lmarena.ai" target="_blank">https://lmarena.ai</a></p>
+                            <p><strong>Скачать Видео с YouTube</strong><br>
+                            <a href="https://ddownr.com/ruKg" target="_blank">https://ddownr.com/ruKg</a><br>
+                            <a href="https://yt5s.biz/ru/" target="_blank">https://yt5s.biz/ru</a></p>
+                            <p><strong>Скачать Видео с VK, TikTok, Instagram, Vimeo</strong><br>
+                            <a href="https://ru.get-save.com/" target="_blank">https://ru.get-save.com/</a><br>
+                            <a href="https://videodownloader.so/en/" target="_blank">https://videodownloader.so/en/</a></p>
+                            <p><strong>Скачать фильмы и сериалы</strong><br>
+                            <a href="http://fast-torrent.ru" target="_blank">http://fast-torrent.ru</a></p>
+                            <p><strong>Фильмы и сериалы онлайн</strong><br>
+                            <a href="https://tv.kinohub.vip" target="_blank">https://tv.kinohub.vip</a><br>
+                            <a href="https://kinops.web.app" target="_blank">https://kinops.web.app</a><br>
+                            <a href="https://kinohost.web.app/" target="_blank">https://kinohost.web.app</a><br>
+                            <a href="https://reyohoho.github.io/reyohoho/top" target="_blank">https://reyohoho.github.io/reyohoho/top</a></p>
+                            <p><strong>Рингтоны телефонов</strong><br>
+                            <a href="http://onj3.andrelouis.com/phonetones/unzipped/" target="_blank">http://onj3.andrelouis.com/phonetones/unzipped/</a></p>
+                            <p><strong>Проверка скорости интернет</strong><br>
+                            <a href="http://cabinet.speedtestcustom.com/" target="_blank">http://cabinet.speedtestcustom.com/</a><br>
+                            <a href="https://www.speedtest.net/ru" target="_blank">https://www.speedtest.net/ru</a></p>
+                            <p><strong>Проверка реального IP адреса</strong><br>
+                            <a href="https://ifconfig.co/" target="_blank">https://ifconfig.co/</a></p>
+                            <p><strong>Media Player Classic - Black Edition</strong><br>
+                            <a href="https://sourceforge.net/projects/mpcbe" target="_blank">https://sourceforge.net/projects/mpcbe</a><br>
+                            <a href="https://github.com/Aleksoid1978/MPC-BE" target="_blank">https://github.com/Aleksoid1978/MPC-BE</a></p>
+                            <p><strong>Обрезать песню - Аудио конвертер - Видео конвертер - PDF инструменты</strong><br>
+                            <a href="https://123apps.com/ru/" target="_blank">https://123apps.com/ru</a><br>
+                            <a href="https://www.ilovepdf.com/ru" target="_blank">https://www.ilovepdf.com/ru</a></p>
+                            <p><strong>Обработка JPEG фотографий онлайн</strong><br>
+                            <a href="https://imgupscaler.ai/ru" target="_blank">https://imgupscaler.ai/ru</a> - 16K Image Upscaler<br>
+                            <a href="https://www.imgonline.com.ua/tools.php" target="_blank">https://www.imgonline.com.ua/tools.php</a><br>
+                            <a href="https://viptalisman.com/" target="_blank">https://viptalisman.com/</a></p>
+                            <p><strong>Хостинг фото и иконок</strong><br>
+                            <a href="https://ru.imgbb.com/" target="_blank">https://ru.imgbb.com/</a></p>
+                            <p><strong>Иконки и векторная графика</strong><br>
+                            <a href="https://www.pngwing.com/ru" target="_blank">https://www.pngwing.com/ru</a><br>
+                            <a href="https://www.klipartz.com/ru" target="_blank">https://www.klipartz.com/ru</a></p>
+                            <p><strong>Временные почтовые ящики</strong><br>
+                            <a href="https://smailpro.com/temp-gmail" target="_blank">https://smailpro.com/temp-gmail</a><br>
+                            <a href="https://10minutemail.net/" target="_blank">https://10minutemail.net/</a><br>
+                            <a href="https://temp-mail.org/ru/" target="_blank">https://temp-mail.org/ru/</a></p>
+                            <p><strong>Виртуальные номера для приема СМС</strong><br>
+                            <a href="https://smsak.org" target="_blank">https://smsak.org</a> Nelver@bk.ru / jF47vDcK3a<br>
+                            <a href="https://onlinesim1.ru" target="_blank">https://onlinesim1.ru</a> Nelver@bk.ru / vit9031981</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 3. Сервисы для IPTV -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/gOWcs1qFhFAkpK4QGHvMt5BFZe8=/fit-in/435x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/1f3i9lypmdno8wcwwokw84o0wo0s0s" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4>Сервисы для IPTV</h4></div>
+                        <div class="nh-features__text">
+                            <p><a href="https://en.fofa.info" target="_blank">https://en.fofa.info</a> tevox22256@eixdeal.com / N14e5L12</p>
+                            <p><a href="https://www.shodan.io" target="_blank">https://www.shodan.io</a> Nelver1981 / vit9031981</p>
+                            <p><a href="http://iptvin.ru" target="_blank">http://iptvin.ru</a> Nelver1981 / 4n9a3ckJ2ZE74h6</p>
+                            <p><a href="https://ru.myip.ms/" target="_blank">https://ru.myip.ms/</a></p>
+                            <p><a href="https://pikniktv.info/" target="_blank">https://pikniktv.info/</a> NelverX / Vit9031981</p>
+                            <p><a href="https://iedem.tv/" target="_blank">https://iedem.tv/</a> Nelver@bk.ru / 9031981</p>
+                            <p><a href="https://ottplayer.tv/" target="_blank">https://ottplayer.tv/</a> Nelver@bk.ru / 9031981</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 4. FM Radio Stations -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/uwrzUpbVeisF1SNhUzthONiyPC8=/fit-in/458x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/f8pbucwo69csc88c8ww00ck4c4ocs4" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4>FM Radio Stations ™</h4></div>
+                        <div class="nh-features__text">
+                            <p><strong>Deep One House Radio</strong><br><a href="http://stream.deep1.ru:8000/deep1mp3">http://stream.deep1.ru:8000/deep1mp3</a></p>
+                            <p><strong>Drum &amp; Bass (101.ru)</strong><br><a href="http://pub0301.101.ru:8000/stream/pro/aac/64/6">http://pub0301.101.ru:8000/stream/pro/aac/64/6</a></p>
+                            <p><strong>Relax FM - Chillout (101.ru)</strong><br><a href="http://pub0301.101.ru:8000/stream/trust/mp3/128/24">http://pub0301.101.ru:8000/stream/trust/mp3/128/24</a></p>
+                            <p><strong>DFM - Vocal Drum</strong><br><a href="http://23.105.238.164/drum96.aacp">http://23.105.238.164/drum96.aacp</a></p>
+                            <p><strong>DFM - Liquid Funk</strong><br><a href="http://23.105.238.164/liquid96.aacp">http://23.105.238.164/liquid96.aacp</a></p>
+                            <p><strong>Радио Шоколад</strong><br><a href="http://choco.hostingradio.ru:10010/fm">http://choco.hostingradio.ru:10010/fm</a></p>
+                            <p><strong>Radio Record - Chillout</strong><br><a href="http://radiorecord.hostingradio.ru/chil96.aacp">http://radiorecord.hostingradio.ru/chil96.aacp</a></p>
+                            <p><strong>Lounge FM Chillout (VPN)</strong><br><a href="https://cast.mediaonline.net.ua/chillout">https://cast.mediaonline.net.ua/chillout</a></p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 5. Коммунальные услуги (ул.Ашик Умера, д.8) -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/wTH0VCpeioujbPB90V1Uunvdyuc=/fit-in/514x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/mmh5u12milw8koo84ooc0o0ksggg48" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4 style="color:#1226da;">Коммунальные услуги (ул.Ашик Умера, д.8)</h4></div>
+                        <div class="nh-features__text">
+                            <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong> л/с 3964<br>Логин: +79787188306<br>Пароль: milka8591</p>
+                            <p><strong><a href="https://lk.crimea-energy.ru" target="_blank">ГУП РК "Крымэнерго"</a></strong> л/с 118222<br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
+                            <p><strong><a href="https://lkk.crimeagasnet.ru" target="_blank">ГУП РК "Крымгазсети"</a></strong> л/с 6783<br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
+                            <p><strong><a href="https://lk.crimea-ecor.ru" target="_blank">ГУП РК "Крымэкоресурсы"</a></strong> л/с 1070118222<br>Логин: 1070118222<br>Пароль: sEhiWafe</p>
+                            <p><strong><a href="https://lk-new.volnamobile.ru" target="_blank">КТК Телеком "Волна" Интернет</a></strong><br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+        <!-- 6. Коммунальные услуги (ул.Ученическая, д.5, кв.16) -->
+        <div class="nh-features__item">
+            <div class="nh-features__item-wrapper">
+                <figure class="nh-features__figure">
+                    <div class="nh-features__image-block">
+                        <img src="//i.siteapi.org/Wp1bzejjwXsMIJvL4gVxwRAEtkw=/fit-in/458x2000/filters:format(webp):upscale()/s2.siteapi.org/5d23dcc0520c42b/features/3gurh20t8dicckow0g008gcg4w08ko" alt="">
+                    </div>
+                    <div class="nh-features__info">
+                        <div class="nh-features__title"><h4 style="color:#1226da;">Коммунальные услуги (ул.Ученическая, д.5, кв.16)</h4></div>
+                        <div class="nh-features__text">
+                            <p><strong><a href="https://voda.crimea.ru/lichnyj-kabinet" target="_blank">ГУП РК "Вода Крыма"</a></strong> л/с 58329<br>Логин: +79787188306<br>Пароль: milka8591</p>
+                            <p><strong><a href="https://lk.crimea-energy.ru" target="_blank">ГУП РК "Крымэнерго"</a></strong> л/с 117546<br>Логин: korovki-koshki58@mail.ru<br>Пароль: milka8591</p>
+                            <p><strong><a href="https://lk.tce.crimea.com/kabinet/login" target="_blank">ГУП РК "Крымтеплокоммунэнерго"</a></strong> л/с 555008257<br>Логин: 555008257<br>Пароль: Исмаилов</p>
+                            <p><strong><a href="https://lk.crimea-ecor.ru/index.htm" target="_blank">ГУП РК "Крымэкоресурсы"</a></strong> л/с 1070117546<br>Логин: 1070117546<br>Пароль: zinurewa</p>
+                            <p><strong><a href="https://lk091.eisgkh.ru/index.htm" target="_blank">НО "РФ КРМД РК"</a></strong> л/с 1093332417<br>Логин: 1093332417<br>Пароль: gane4Ohi</p>
+                            <p><strong>ООО "Рембытсервис"</strong> л/с 51649</p>
+                        </div>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>Nelver</div>
+    </div>
+</footer>
+
+<script>
+    // Progress bar
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const style = document.createElement('style');
+        style.textContent = `body::after { width: ${scrolled}%; }`;
+        document.head.appendChild(style);
+        setTimeout(() => document.head.removeChild(style), 50);
+    });
+</script>
+</body>
+</html>
